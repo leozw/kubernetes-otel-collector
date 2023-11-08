@@ -16,54 +16,7 @@ receivers:
           metrics_path: '/stats/prometheus'
           static_configs:
             - targets: ['localhost:19000']
-        - job_name: rancher-monitoring-alertmanager
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.228:9093"]
-        - job_name: rancher-monitoring-grafana
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.238:8080"]
-        - job_name: k3s-server
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["192.168.0.209:10250"]
-        - job_name: kube-state-metrics
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.236:8080"]
-        - job_name: rancher-monitoring-operator
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.214:8443"]
-        - job_name: node-exporter
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["192.168.0.209:9796"]
-        - job_name: rancher-monitoring-prometheus
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.217:8081"]
-        - job_name: rancher
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.239:80"]
-        - job_name: apiserver
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["192.168.0.209:6443"]
-        - job_name: istio-ingressgateway
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.229:15090"]
-        - job_name: pilot
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.219:15014"]
-        - job_name: coredns
-          scrape_interval: 10s
-          static_configs:
-            - targets: ["10.42.0.221:9153"]
+       
 exporters:
   otlp:
     endpoint: https://tempo-prod-12-prod-sa-east-0.grafana.net:443
